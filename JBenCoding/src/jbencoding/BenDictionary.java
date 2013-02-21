@@ -1,11 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package jbencoding;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.TreeMap;
 
@@ -19,14 +16,6 @@ public class BenDictionary {
 
     public BenDictionary() {
         this.value = new TreeMap();
-    }
-
-    public TreeMap getValue() {
-        return value;
-    }
-
-    public void setValue(TreeMap value) {
-        this.value = value;
     }
 
     public Object add(BenString key, BenString value) {
@@ -47,6 +36,10 @@ public class BenDictionary {
 
     public Object get(BenString key) {
         return value.get(key);
+    }
+
+    public Collection values() {
+        return value.values();
     }
 
     public static BenDictionary parseBenDictionary(InputStream is, char preReadChar)

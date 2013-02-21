@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package jbencoding;
 
 import java.io.IOException;
@@ -11,38 +7,18 @@ import java.io.InputStream;
  *
  * @author Pankaj
  */
-public class BenInteger extends Number {
-    
+public class BenInteger {
+
     private long value;
-    
+
     public BenInteger(long value) {
         this.value = value;
     }
-    
+
     public long getValue() {
         return value;
     }
-    
-    public void setValue(long value) {
-        this.value = value;
-    }
-    
-    public int intValue() {
-        return (int) value;
-    }
-    
-    public long longValue() {
-        return value;
-    }
-    
-    public float floatValue() {
-        return (float) value;
-    }
-    
-    public double doubleValue() {
-        return (double) value;
-    }
-    
+
     public static BenInteger parseBenInteger(InputStream is, char preReadChar) throws InvalidBenCodingException, IOException {
         char ch = preReadChar;
         if (ch != 'i') {
@@ -59,7 +35,7 @@ public class BenInteger extends Number {
         }
         return new BenInteger(Long.parseLong(str));
     }
-    
+
     public String toString() {
         return "i" + Long.toString(value) + "e";
     }

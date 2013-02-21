@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package jbencoding;
 
 import java.io.IOException;
@@ -18,14 +14,6 @@ public class BenList {
 
     public BenList() {
         this.value = new ArrayList();
-    }
-
-    public ArrayList getValue() {
-        return value;
-    }
-
-    public void setValue(ArrayList value) {
-        this.value = value;
     }
 
     public boolean add(BenString benString) {
@@ -88,6 +76,10 @@ public class BenList {
             ch = (char) is.read();
         }
         return list;
+    }
+
+    public Object[] toArray() {
+        return value.toArray();
     }
 
     public String toString() {

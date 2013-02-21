@@ -1,12 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package jbencoding;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 
 /**
@@ -17,7 +12,7 @@ public class BenString implements Comparable {
 
     private byte[] value;
 
-    public BenString(String value){
+    public BenString(String value) {
         this.value = value.getBytes();
     }
 
@@ -25,20 +20,8 @@ public class BenString implements Comparable {
         this.value = value;
     }
 
-    public byte[] getValue() {
-        return value;
-    }
-
-    public void setValue(byte[] value) {
-        this.value = value;
-    }
-
-    public byte getValue(int index) {
-        return this.value[index];
-    }
-
-    public void setValue(int index, byte newValue) {
-        this.value[index] = newValue;
+    public String getValue() {
+        return new String(value);
     }
 
     public int compareTo(Object o) {
